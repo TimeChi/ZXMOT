@@ -23,3 +23,4 @@ python demo.py --data_root '测试数据路径'
 2)设计了轨迹评分函数：score = tracklet_len/max_len + track.score，在轨迹池的数量大于一定值时，优先匹配得分较高的轨迹。
 3)计算卡尔曼预测的位置和检测之间的距离矩阵，并用Jonker-Volgenant 算法来进行分配。
 4)计算未关联轨迹和未关联检测之间的IOU矩阵（内部值为1-iou），并用Jonker-Volgenant 算法来进行分配。
+# ZXMOT
