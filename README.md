@@ -1,14 +1,17 @@
 # 2020中兴捧月算法大赛 阿尔法（MOT）赛道 Rank2
 更多细节请查看我的博客：https://blog.csdn.net/weixin_42907473/article/details/106950555
 ### 1、环境配置
+```
 conda create -n fast python=3.7
 cd  fast-master/
 pip install -r requirments.txt
-
+```
 ### 2、运行
+```
 cd fast-master/src/
 source activate fast
 python demo.py --data_root '测试数据路径' 
+```
 待代码运行结束，结果输出在fast-master/results/下
 
 ### 3、赛题分析
@@ -20,7 +23,10 @@ python demo.py --data_root '测试数据路径'
 
 ### 4、算法思路
 1)设定阈值先过滤一下给定的检测框，然后再通过nms来抑制重复框。
+
 2)设计了轨迹评分函数：score = tracklet_len/max_len + track.score，在轨迹池的数量大于一定值时，优先匹配得分较高的轨迹。
+
 3)计算卡尔曼预测的位置和检测之间的距离矩阵，并用Jonker-Volgenant 算法来进行分配。
+
 4)计算未关联轨迹和未关联检测之间的IOU矩阵（内部值为1-iou），并用Jonker-Volgenant 算法来进行分配。
-# ZXMOT
+
